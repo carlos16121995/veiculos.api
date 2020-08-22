@@ -1,0 +1,40 @@
+CREATE DEFINER=`veiculosapi`@`%` PROCEDURE `relatorio_veiculo`(in periodo date, in id_veiculo int, out litros CHAR, out valor CHAR, out km CHAR, out media DOUBLE)
+BEGIN
+DECLARE pesquisa DATE; 
+DECLARE contador DATE;
+DECLARE aux char;
+DECLARE soma_litros DOUBLE DEFAULT 0;
+DECLARE soma_valor DECIMAL(7,2) DEFAULT 0;
+DECLARE soma_km double DEFAULT 0;
+DECLARE litros_ano DOUBLE DEFAULT 0;
+DECLARE km_ano DOUBLE DEFAULT 0;
+DECLARE quilometragem DOUBLE DEFAULT 0;
+DECLARE soma_km_total DOUBLE DEFAULT 0;
+DECLARE litros CHAR DEFAULT '';
+DECLARE valor CHAR DEFAULT '';
+DECLARE km CHAR DEFAULT '';
+DECLARE media DOUBLE DEFAULT 0;
+SET pesquisa = DATE_FORMAT(periodo, "%Y/%m/%d");
+SET contador = ADDDATE(pesquisa, INTERVAL 1 YEAR);
+WHILE contador <= pesquisa DO
+	SELECT SUM(litro) INTO soma_litros FROM abastecimento WHERE veiculo_id = id_veiculo AND ((SELECT MONTH(data)) = (SELECT MONTH(contador)) AND ((SELECT YEAR(data)) = (SELECT YEAR(contador)))); 
+	SET aux = CONCAT(DATA_EXTENSO(mes),":", soma_litros, ";");
+	SET litros = litros + aux; 
+    SET litros_ano = litros_ano + soma_litros;
+	
+	SELECT SUM(valor) INTO soma_valor FROM abastecimento WHERE veiculo_id = id_veiculo AND ((SELECT MONTH(data)) = (SELECT MONTH(contador)) AND ((SELECT YEAR(data)) = (SELECT YEAR(contador)))); 
+	SET aux = CONCAT(DATA_EXTENSO(mes),":", soma_valor, ";");
+	SET valor = valor + aux; 
+	
+	SELECT SUM(km) INTO soma_km FROM abastecimento WHERE veiculo_id = id_veiculo AND ((SELECT MONTH(data)) = (SELECT MONTH(contador)) AND ((SELECT YEAR(data)) = (SELECT YEAR(contador)))); 
+	SELECT SUM(km) INTO soma_km_total FROM abastecimento WHERE veiculo_id = id_veiculo; 
+    SELECT quilometragem INTO quilometragem FROM veiculo WHERE id = id_veiculo; 
+    SET soma_km = (soma_km_total - quilometragem) - soma_km;
+    SET aux = CONCAT(DATA_EXTENSO(mes),":", soma_km, ";");
+	SET km = km + aux;
+	SET km = km_ano + soma_km;
+    
+	SET contador = ADDDATE(contador, INTERVAL 1 MONTH);
+END WHILE;   
+	SET media = km_ano/litros_ano;
+END
