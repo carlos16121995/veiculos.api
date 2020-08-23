@@ -13,6 +13,8 @@ namespace veiculos.api.Controllers
     public class VeiculoController : Controller
     {
 
+        /* ----------------------------------------------------------------- MARCA VEICULO ----------------------------------------------------------------------------*/
+
         [HttpPost("[action]")]
         public ActionResult GravarMarcaVeiculo(MarcaVeiculo marcaVeiculo)
         {
@@ -63,7 +65,7 @@ namespace veiculos.api.Controllers
             }
             return Json(marcaVeiculo);
         }
-        [HttpDelete]
+        [HttpDelete("[action]/{id}")]
         public IActionResult ExcluirMarcaVeiculo(int id)
         {
 
@@ -80,5 +82,78 @@ namespace veiculos.api.Controllers
             return BadRequest();
 
         }
+
+        /* ----------------------------------------------------------------- MODELO VEICULO ----------------------------------------------------------------------------*/
+
+
+        [HttpPost("[action]")]
+        public ActionResult GravarModeloVeiculo(ModeloVeiculo modeloVeiculo)
+        {
+            if ((modeloVeiculo.Id == 0) && (modeloVeiculo.Nome != "") && (modeloVeiculo.Nome.Length > 2) && (modeloVeiculo.Nome.Length <= 30))
+            {
+                int ret = modeloVeiculo.Gravar();
+                if (ret > 0)
+                {
+                    return Ok("Cadastrado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpPut("[action]")]
+        public ActionResult AlterarModeloVeiculo(ModeloVeiculo modeloVeiculo)
+        {
+            if ((modeloVeiculo.Id > 0) && (modeloVeiculo.Nome != "") && (modeloVeiculo.Nome.Length > 2) && (modeloVeiculo.Nome.Length <= 30))
+            {
+                int ret = modeloVeiculo.Alterar();
+                if (ret > 0)
+                {
+                    return Ok("Alterado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpGet("[action]/{id}")]
+        public ActionResult BuscarModeloVeiculo(int id)
+        {
+            ModeloVeiculo modeloVeiculo = new ModeloVeiculo().Buscar(id);
+
+            if (modeloVeiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(modeloVeiculo);
+        }
+        [HttpGet("[action]")]
+        public ActionResult BuscarModeloVeiculo()
+        {
+            List<ModeloVeiculo> modeloVeiculo = new ModeloVeiculo().Buscar();
+
+            if (modeloVeiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(modeloVeiculo);
+        }
+        [HttpDelete("[action]/{id}")]
+        public IActionResult ExcluirModeloVeiculo(int id)
+        {
+
+            int ret = new ModeloVeiculo().Excluir(id);
+
+            if (ret == -99)
+            {
+                return Unauthorized("Este modelo possui um veiculo relacionado a ele. Remova o relacionamento antes de excluir.");
+            }
+            if (ret > 0)
+            {
+                return Ok("Excluido com sucesso!");
+            }
+            return BadRequest();
+
+        }
+
+
     }
 }
