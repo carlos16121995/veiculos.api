@@ -221,7 +221,7 @@ namespace veiculos.api.Models
                 entity.Property(e => e.Ano)
                     .IsRequired()
                     .HasColumnName("ano")
-                    .HasMaxLength(4)
+                   .HasColumnType("int(11)")
                     .IsUnicode(false);
 
                 entity.Property(e => e.Foto)

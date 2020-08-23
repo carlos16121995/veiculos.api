@@ -299,5 +299,80 @@ namespace veiculos.api.Controllers
         }
 
 
+
+
+        /* ----------------------------------------------------------------- VEICULO ----------------------------------------------------------------------------*/
+
+
+        [HttpPost("[action]")]
+        public ActionResult GravarVeiculo(Veiculo veiculo)
+        {
+            if ((veiculo.Id == 0) && (veiculo.Ano <= DateTime.Now.Year) && (veiculo.Placa.Length == 7) && (veiculo.Quilometragem > 0) && 
+                (veiculo.MarcaVeiculoId > 0) && (veiculo.ModeloVeiculoId > 0) && (veiculo.UsuarioId > 0) && (veiculo.TipoCombustivelId > 0))
+            {
+                int ret = veiculo.Gravar();
+                if (ret > 0)
+                {
+                    return Ok("Cadastrado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpPut("[action]")]
+        public ActionResult AlterarVeiculo(Veiculo veiculo)
+        {
+            if ((veiculo.Id > 0) && (veiculo.Ano <= DateTime.Now.Year) && (veiculo.Placa.Length == 7) && (veiculo.Quilometragem > 0) &&
+                (veiculo.MarcaVeiculoId > 0) && (veiculo.ModeloVeiculoId > 0) && (veiculo.UsuarioId > 0) && (veiculo.TipoCombustivelId > 0))
+            {
+                int ret = veiculo.Alterar();
+                if (ret > 0)
+                {
+                    return Ok("Alterado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpGet("[action]/{id}")]
+        public ActionResult BuscarVeiculo(int id)
+        {
+            Veiculo veiculo = new Veiculo().Buscar(id);
+
+            if (veiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(veiculo);
+        }
+        [HttpGet("[action]")]
+        public ActionResult BuscarVeiculo()
+        {
+            List<Veiculo> veiculo = new Veiculo().Buscar();
+
+            if (veiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(veiculo);
+        }
+        [HttpDelete("[action]/{id}")]
+        public IActionResult ExcluirVeiculo(int id)
+        {
+
+            int ret = new Veiculo().Excluir(id);
+
+            if (ret == -99)
+            {
+                return Unauthorized("Este veiculo possui um abastecimento relacionado a ele. Remova o relacionamento antes de excluir.");
+            }
+            if (ret > 0)
+            {
+                return Ok("Excluido com sucesso!");
+            }
+            return BadRequest();
+
+        }
+
     }
 }
