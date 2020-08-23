@@ -216,7 +216,7 @@ namespace veiculos.api.Controllers
 
             if (ret == -99)
             {
-                return Unauthorized("Este combustivel possui um veiculo relacionado a ele. Remova o relacionamento antes de excluir.");
+                return Unauthorized("Este combustivel possui um veiculo ou abastecimento relacionado a ele. Remova o relacionamento antes de excluir.");
             }
             if (ret > 0)
             {

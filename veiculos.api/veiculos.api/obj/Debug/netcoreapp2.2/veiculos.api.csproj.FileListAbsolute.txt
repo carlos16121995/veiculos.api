@@ -15,4 +15,3 @@ C:\Users\dukdu\Desktop\teste.net\veiculos.api\veiculos.api\obj\Debug\netcoreapp2
 C:\Users\dukdu\Desktop\teste.net\veiculos.api\veiculos.api\obj\Debug\netcoreapp2.2\veiculos.api.pdb
 C:\Users\dukdu\Desktop\teste.net\veiculos.api\veiculos.api\obj\Debug\netcoreapp2.2\veiculos.api.genruntimeconfig.cache
 C:\Users\dukdu\Desktop\teste.net\veiculos.api\veiculos.api\obj\Debug\netcoreapp2.2\veiculos.api.csproj.CoreCompileInputs.cache
-C:\Users\dukdu\Desktop\teste.net\veiculos.api\veiculos.api\obj\Debug\netcoreapp2.2\veiculos.api.csprojAssemblyReference.cache
