@@ -155,5 +155,77 @@ namespace veiculos.api.Controllers
         }
 
 
+        /* ----------------------------------------------------------------- TIPO COMBUSTIVEL ----------------------------------------------------------------------------*/
+
+
+        [HttpPost("[action]")]
+        public ActionResult GravarTipoCombustivel(TipoCombustivel tipoCombustivel)
+        {
+            if ((tipoCombustivel.Id == 0) && (tipoCombustivel.Nome != "") && (tipoCombustivel.Nome.Length > 2) && (tipoCombustivel.Nome.Length <= 30))
+            {
+                int ret = tipoCombustivel.Gravar();
+                if (ret > 0)
+                {
+                    return Ok("Cadastrado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpPut("[action]")]
+        public ActionResult AlterarTipoCombustivel(TipoCombustivel tipoCombustivel)
+        {
+            if ((tipoCombustivel.Id > 0) && (tipoCombustivel.Nome != "") && (tipoCombustivel.Nome.Length > 2) && (tipoCombustivel.Nome.Length <= 30))
+            {
+                int ret = tipoCombustivel.Alterar();
+                if (ret > 0)
+                {
+                    return Ok("Alterado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpGet("[action]/{id}")]
+        public ActionResult BuscarTipoCombustivel(int id)
+        {
+            TipoCombustivel tipoCombustivel = new TipoCombustivel().Buscar(id);
+
+            if (tipoCombustivel == null)
+            {
+                return NotFound();
+            }
+            return Json(tipoCombustivel);
+        }
+        [HttpGet("[action]")]
+        public ActionResult BuscarTipoCombustivel()
+        {
+            List<TipoCombustivel> tipoCombustivel = new TipoCombustivel().Buscar();
+
+            if (tipoCombustivel == null)
+            {
+                return NotFound();
+            }
+            return Json(tipoCombustivel);
+        }
+        [HttpDelete("[action]/{id}")]
+        public IActionResult ExcluirTipoCombustivel(int id)
+        {
+
+            int ret = new TipoCombustivel().Excluir(id);
+
+            if (ret == -99)
+            {
+                return Unauthorized("Este combustivel possui um veiculo relacionado a ele. Remova o relacionamento antes de excluir.");
+            }
+            if (ret > 0)
+            {
+                return Ok("Excluido com sucesso!");
+            }
+            return BadRequest();
+
+        }
+
+
     }
 }
