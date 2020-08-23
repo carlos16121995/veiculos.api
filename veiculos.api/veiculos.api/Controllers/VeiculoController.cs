@@ -227,5 +227,77 @@ namespace veiculos.api.Controllers
         }
 
 
+        /* ----------------------------------------------------------------- TIPO VEICULO ----------------------------------------------------------------------------*/
+
+
+        [HttpPost("[action]")]
+        public ActionResult GravarTipoVeiculo(TipoVeiculo tipoVeiculo)
+        {
+            if ((tipoVeiculo.Id == 0) && (tipoVeiculo.Nome != "") && (tipoVeiculo.Nome.Length > 2) && (tipoVeiculo.Nome.Length <= 30))
+            {
+                int ret = tipoVeiculo.Gravar();
+                if (ret > 0)
+                {
+                    return Ok("Cadastrado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpPut("[action]")]
+        public ActionResult AlterarTipoVeiculo(TipoVeiculo tipoVeiculo)
+        {
+            if ((tipoVeiculo.Id > 0) && (tipoVeiculo.Nome != "") && (tipoVeiculo.Nome.Length > 2) && (tipoVeiculo.Nome.Length <= 30))
+            {
+                int ret = tipoVeiculo.Alterar();
+                if (ret > 0)
+                {
+                    return Ok("Alterado com sucesso!");
+                }
+            }
+
+            return BadRequest();
+        }
+        [HttpGet("[action]/{id}")]
+        public ActionResult BuscarTipoVeiculo(int id)
+        {
+            TipoVeiculo tipoVeiculo = new TipoVeiculo().Buscar(id);
+
+            if (tipoVeiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(tipoVeiculo);
+        }
+        [HttpGet("[action]")]
+        public ActionResult BuscarTipoVeiculo()
+        {
+            List<TipoVeiculo> tipoVeiculo = new TipoVeiculo().Buscar();
+
+            if (tipoVeiculo == null)
+            {
+                return NotFound();
+            }
+            return Json(tipoVeiculo);
+        }
+        [HttpDelete("[action]/{id}")]
+        public IActionResult ExcluirTipoVeiculo(int id)
+        {
+
+            int ret = new TipoVeiculo().Excluir(id);
+
+            if (ret == -99)
+            {
+                return Unauthorized("Este tipo de veiculo possui um veiculo relacionado a ele. Remova o relacionamento antes de excluir.");
+            }
+            if (ret > 0)
+            {
+                return Ok("Excluido com sucesso!");
+            }
+            return BadRequest();
+
+        }
+
+
     }
 }
