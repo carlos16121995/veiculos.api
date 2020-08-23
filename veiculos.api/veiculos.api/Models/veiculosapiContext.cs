@@ -168,6 +168,10 @@ namespace veiculos.api.Models
             {
                 entity.ToTable("usuario", "veiculosapi");
 
+                entity.HasIndex(e => e.Email)
+                   .HasName("email_UNIQUE")
+                   .IsUnique();
+
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
