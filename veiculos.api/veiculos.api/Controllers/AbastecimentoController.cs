@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using veiculos.api.Models;
+using veiculos.api.Relatorio;
 
 namespace veiculos.api.Controllers
 {
@@ -79,6 +80,30 @@ namespace veiculos.api.Controllers
             }
             return BadRequest();
 
+        }
+
+        /* ----------------------------------------------------------------- Relatorio ----------------------------------------------------------------------------*/
+
+        [HttpGet("[action]/{mes}/{ano}")]
+        public IActionResult GerarRelatorio(int mes, int ano)
+        {
+            if (mes > 0 && mes < 13 && ano <= DateTime.Now.Year)
+            {
+                var ret = new RelatorioVeiculo().GerarRelatorio(mes, ano);
+                return Json(ret);
+            }
+            return BadRequest();
+        }
+
+        [HttpGet("[action]/{veiculo}/{mes}/{ano}")]
+        public IActionResult GerarRelatorio(int veiculo, int mes, int ano)
+        {
+            if (mes > 0 && mes < 13 && ano <= DateTime.Now.Year && veiculo > 0)
+            {
+                var ret = new RelatorioVeiculo().GerarRelatorio(veiculo, mes, ano);
+                return Json(ret);
+            }
+            return BadRequest();
         }
 
     }
