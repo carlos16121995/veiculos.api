@@ -24,6 +24,22 @@ namespace veiculos.api.Models
         public virtual ICollection<Veiculo> Veiculo { get; set; }
 
 
+        public bool Autenticar()
+        {
+            try
+            {
+                using (veiculosapiContext contexto = new veiculosapiContext())
+                {
+                    var ret = contexto.Usuario.Where(p => p.Email == this.Email && p.Senha == CalculateMD5Hash(this.Senha)).FirstOrDefault();
+
+                    return ret == null ? false : true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         private string CalculateMD5Hash(string input)
         {
             // Calcular o Hash

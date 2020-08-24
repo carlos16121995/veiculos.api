@@ -1,0 +1,1400 @@
+{
+	"info": {
+		"_postman_id": "e2be9445-e893-49b1-8ab0-e917dedc570c",
+		"name": "veiculos.api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ABASTECIMENTO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n        \"km\": 500,\r\n        \"litro\": 50.0,\r\n        \"valor\": 50.00,\r\n        \"data\": \"2020-03-02T00:00:00\",\r\n        \"posto\": \"Teste2\",\r\n        \"tipoCombustivelId\": 1,\r\n        \"veiculoId\": 2,\r\n        \"usuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/GravarAbastecimento",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"GravarAbastecimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n        \"km\": 530,\r\n        \"litro\": 50.0,\r\n        \"valor\": 50.00,\r\n        \"data\": \"2020-03-02T00:00:00\",\r\n        \"posto\": \"Teste3\",\r\n        \"tipoCombustivelId\": 1,\r\n        \"veiculoId\": 2,\r\n        \"usuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/AlterarAbastecimento",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"AlterarAbastecimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/BuscarAbastecimento",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"BuscarAbastecimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/BuscarAbastecimento/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"BuscarAbastecimento",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/ExcluirAbastecimento/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"ExcluirAbastecimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MARCAVEICULO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"0\",\r\n    \"Nome\":\"Honda\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/GravarMarcaVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"GravarMarcaVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"1\",\r\n    \"Nome\":\"Volkswagen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/AlterarMarcaVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"AlterarMarcaVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarMarcaVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarMarcaVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarMarcaVeiculo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarMarcaVeiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/ExcluirMarcaVeiculo/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"ExcluirMarcaVeiculo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MODELOVEICULO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"0\",\r\n    \"Nome\":\"Fusca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/GravarModeloVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"GravarModeloVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"1\",\r\n    \"Nome\":\"Gol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/AlterarModeloVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"AlterarModeloVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarModeloVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarModeloVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarModeloVeiculo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarModeloVeiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/ExcluirModeloVeiculo/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"ExcluirModeloVeiculo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RELATORIO",
+			"item": [
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/GerarRelatorio/05/2020",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"GerarRelatorio",
+								"05",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTgyNTE1MDksImlzcyI6IkFsZ3VtSXNzdWVyIiwiYXVkIjoiQWxndW1hQXVkaWVuY2UifQ.4mV5TQcjM44MX0SAX2Prqxki4tSMVtbkfQyunHYf9No",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Abastecimento/GerarRelatorio/1/05/2020",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Abastecimento",
+								"GerarRelatorio",
+								"1",
+								"05",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TIPOCOMBUSTIVEL",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"0\",\r\n    \"Nome\":\"Gasolina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/GravarTipoCombustivel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"GravarTipoCombustivel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"1\",\r\n    \"Nome\":\"Alcool\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/AlterarTipoCombustivel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"AlterarTipoCombustivel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarTipoCombustivel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarTipoCombustivel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarTipoCombustivel/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarTipoCombustivel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/ExcluirTipoCombustivel/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"ExcluirTipoCombustivel",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TIPOVEICULO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"0\",\r\n    \"Nome\":\"Moto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/GravarTipoVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"GravarTipoVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"1\",\r\n    \"Nome\":\"Carro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/AlterarTipoVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"AlterarTipoVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarTipoVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarTipoVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarTipoVeiculo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarTipoVeiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/ExcluirTipoVeiculo/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"ExcluirTipoVeiculo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "USUARIO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : \"0\",\r\n    \"Nome\":\"Carlos\",\r\n    \"Email\": \"Casdfasd@f\",\r\n    \"Senha\" :\"asdfas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Usuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"Casdfasd@f\",\r\n    \"Senha\" :\"asdfas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Usuario/Logar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Usuario",
+								"Logar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTgyNTE1MDksImlzcyI6IkFsZ3VtSXNzdWVyIiwiYXVkIjoiQWxndW1hQXVkaWVuY2UifQ.4mV5TQcjM44MX0SAX2Prqxki4tSMVtbkfQyunHYf9No",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Usuario/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VEICULO",
+			"item": [
+				{
+					"name": "Gravar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"ano\": 2008,\r\n    \"placa\": \"ABCB123\",\r\n    \"quilometragem\": 750,\r\n    \"foto\": null,\r\n    \"modeloVeiculoId\": 1,\r\n    \"marcaVeiculoId\": 1,\r\n    \"usuarioId\": 1,\r\n    \"tipoCombustivelId\": 1,\r\n    \"tipoVeiculoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/GravarVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"GravarVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"ano\": 2009,\r\n    \"placa\": \"ABC6123\",\r\n    \"quilometragem\": 790,\r\n    \"foto\": null,\r\n    \"modeloVeiculoId\": 1,\r\n    \"marcaVeiculoId\": 1,\r\n    \"usuarioId\": 1,\r\n    \"tipoCombustivelId\": 1,\r\n    \"tipoVeiculoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/AlterarVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"AlterarVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar 1",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarVeiculo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarVeiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar *",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/BuscarVeiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"BuscarVeiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44352/api/Veiculo/ExcluirVeiculo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44352",
+							"path": [
+								"api",
+								"Veiculo",
+								"ExcluirVeiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
